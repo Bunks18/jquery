@@ -1,7 +1,8 @@
 // your code here!
 
 $(function(){
-$( "#button" ).click(function() {
+$( "#button" ).click(function(event) {
+  event.preventDefault();
 
 //remove the hidden class
   $("#d1").removeClass("hidden");
@@ -55,8 +56,8 @@ var lines = [];
   // push the results
 $('#wordCount-spot').html(str.match(/(\w+)/g).length)
 $('#uniqueCount-spot').html(uniqueArray);
-$('#avgWordLength').html(newAvg);
-$('#avgSentence').html(linesAvg);
+$('#avgWordLength').html(newAvg.toFixed(2));
+$('#avgSentence').html(linesAvg.toFixed(2));
 
 });
 });
